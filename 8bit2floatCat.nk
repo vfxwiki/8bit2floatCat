@@ -1,0 +1,59 @@
+set cut_paste_input [stack 0]
+version 15.1 v5
+push $cut_paste_input
+NoOp {
+name Input
+label ACEScg
+selected true
+xpos -1828
+ypos -1389
+}
+Add {
+value 0.018
+name Add1
+selected true
+xpos -1828
+ypos -1286
+}
+OCIOColorSpace {
+channels all
+in_colorspace scene_linear
+out_colorspace ADX10
+name OCIOColorSpace12
+selected true
+xpos -1828
+ypos -1200
+}
+Inference {
+useGPUIfAvailable false
+modelFile D:/eye/prjct/8bit2floatCat/applctns/nuke/cats/13/Training_250207_084743.148925.cat
+serialiseKnob {}
+name Inference14
+label 8bit2Float
+selected true
+xpos -1828
+ypos -1087
+}
+OCIOColorSpace {
+channels all
+in_colorspace ADX10
+out_colorspace scene_linear
+name OCIOColorSpace15
+selected true
+xpos -1828
+ypos -958
+}
+Add {
+value -0.018
+name Add8
+selected true
+xpos -1828
+ypos -882
+}
+NoOp {
+name Output
+label ACEScg
+selected true
+xpos -1828
+ypos -776
+}
